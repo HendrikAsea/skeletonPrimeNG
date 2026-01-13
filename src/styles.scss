@@ -1,2 +1,219 @@
 @use './tailwind.css';
 @use "primeicons/primeicons.css";
+
+/* Figma Design System CSS Variables */
+:root {
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 40px;
+  
+  /* Margins */
+  --margin-xs: 8px;
+  --margin-s: 16px;
+  --margin-m: 24px;
+  
+  /* Border Radius */
+  --card-radius: 16px;
+  --button-radius: 24px;
+  --global-radius: 8px;
+  
+  /* Colors - Neutral */
+  --neutral-white: #FFFFFF;
+  --neutral-subtle-main: #E2E8F0;
+  --base-white: #FFFFFF;
+  --primary-white-main: #FFFFFF;
+  
+  /* Colors - Primary */
+  --primary-navy-main: #003366;
+  --text-primary-main: #1A4775;
+  --text-primary-text-main: #1A4775;
+  --button-primary-surface: #1A4775;
+  --button-primary-text: #FFFFFF;
+  
+  /* Colors - Text */
+  --text-bluegray-main: #1E293B;
+  --dropdown-text-default: #58667A;
+  --secondary-process-black-main: #000000;
+  --secondary-process-black-tint: #1A1A1A;
+  
+  /* Colors - Surface */
+  --surface-outline-main: #E4EAF1;
+  --dropdown-default-border: #E4EAF1;
+  --dropdown-default-surface: #FFFFFF;
+  --input-default-surface: #FFFFFF;
+  
+  /* Colors - Accent */
+  --accent-text-main: #FF4444;
+  --text-accent-main: #F6921E;
+  
+  /* Colors - Switch */
+  --switch-default-surface: #64748B;
+  --switch-default-default: #FFFFFF;
+  
+  /* Typography */
+  --font-name-gotham: 'Montserrat', -apple-system, Roboto, Helvetica, sans-serif;
+  --font-size-1xs: 12px;
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 32px;
+  --line-height-1xs: 14px;
+  --line-height-xs: 18px;
+  --line-height-s: 20px;
+  --line-height-m: 24px;
+  --line-height-l: 28px;
+  --line-height-xl: 40px;
+  
+  /* Background */
+  --bg-light: #F8FAFC;
+  
+  /* Chart Colors */
+  --chart-color-current: #3C695C;
+  --chart-color-30days: #AADEA7;
+  --chart-color-60days: #E6F69D;
+  --chart-color-90days: #176999;
+  --chart-color-90plus: #64C2A6;
+  --chart-bar-dark: #101648;
+  --chart-bar-light: #7987FF;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-name-gotham);
+  background: var(--bg-light);
+  color: var(--secondary-process-black-main);
+}
+
+/* Utility Classes */
+.card {
+  background: var(--neutral-white);
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.02);
+}
+
+.card-large-shadow {
+  box-shadow: 0 4px 40px 0 rgba(26, 71, 117, 0.04);
+}
+
+.surface-border {
+  border: 1px solid var(--surface-outline-main);
+}
+
+.primary-button {
+  background: var(--button-primary-surface);
+  color: var(--button-primary-text);
+  border-radius: var(--button-radius);
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-name-gotham);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  line-height: var(--line-height-xs);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  background: #0f3251;
+}
+
+.primary-text {
+  color: var(--text-primary-main);
+}
+
+.navy-text {
+  color: var(--primary-navy-main);
+}
+
+.gray-text {
+  color: var(--dropdown-text-default);
+}
+
+.black-text {
+  color: var(--secondary-process-black-tint);
+}
+
+.accent-red-text {
+  color: var(--accent-text-main);
+}
+
+.accent-orange-text {
+  color: var(--text-accent-main);
+}
+
+.accent-green-text {
+  color: #27A436;
+}
+
+/* Typography Classes */
+.heading-xl {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  line-height: var(--line-height-xl);
+  color: var(--text-primary-main);
+}
+
+.heading-l {
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  line-height: var(--line-height-l);
+  color: var(--primary-navy-main);
+}
+
+.heading-m {
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  line-height: var(--line-height-m);
+  color: var(--text-primary-main);
+}
+
+.body-text {
+  font-size: var(--font-size-s);
+  font-weight: 400;
+  line-height: var(--line-height-s);
+}
+
+.small-text {
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  line-height: var(--line-height-xs);
+}
+
+.tiny-text {
+  font-size: var(--font-size-1xs);
+  font-weight: 400;
+  line-height: var(--line-height-1xs);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-subtle-main);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--switch-default-surface);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary-main);
+}
