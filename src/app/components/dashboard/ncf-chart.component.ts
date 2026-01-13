@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DropdownModule } from 'primeng/dropdown';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 
@@ -9,7 +9,7 @@ Chart.register(...registerables);
 @Component({
   selector: 'app-ncf-chart',
   standalone: true,
-  imports: [CommonModule, DropdownModule, FormsModule],
+  imports: [CommonModule, AutoCompleteModule, FormsModule],
   template: `
     <div class="ncf-chart-container card">
       <div class="ncf-chart-content">
@@ -30,8 +30,8 @@ Chart.register(...registerables);
           </div>
           
           <div class="ncf-filter">
-            <p-dropdown 
-              [options]="filterOptions" 
+            <p-autoComplete 
+              [suggestions]="filterOptions" 
               [(ngModel)]="selectedFilter"
               optionLabel="label"
               [style]="{'width': '145px'}"
@@ -41,7 +41,7 @@ Chart.register(...registerables);
                   {{ selectedFilter?.label || 'All Payments' }}
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-autoComplete>
           </div>
         </div>
         

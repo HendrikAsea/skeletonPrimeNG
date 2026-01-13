@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DropdownModule } from 'primeng/dropdown';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard-topbar',
   standalone: true,
-  imports: [CommonModule, DropdownModule, FormsModule],
+  imports: [CommonModule, AutoCompleteModule, FormsModule],
   template: `
     <div class="dashboard-topbar card card-large-shadow">
       <div class="topbar-container">
         <div class="company-selection">
-          <p-dropdown 
-            [options]="companies" 
+          <p-autoComplete 
+            [suggestions]="companies" 
+            [dropdown]="true" 
             [(ngModel)]="selectedCompany"
             optionLabel="name"
             [style]="{'width': '100%'}"
@@ -28,7 +29,7 @@ import { FormsModule } from '@angular/forms';
                 {{ company.name }}
               </div>
             </ng-template>
-          </p-dropdown>
+          </p-autoComplete>
         </div>
         
         <div class="profile-settings">
