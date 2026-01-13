@@ -231,8 +231,7 @@ export class AgeAnalysisChartComponent implements OnInit {
               }
             }
           }
-        },
-        cutout: '65%'
+        }
       }
     };
     

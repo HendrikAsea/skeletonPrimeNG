@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputSwitchModule } from 'primeng/inputswitch';
+import { ToggleSwitchModule } from 'primeng/toggleswitch';
 import { FormsModule } from '@angular/forms';
 
 interface MenuItem {
@@ -13,7 +13,7 @@ interface MenuItem {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, InputSwitchModule, FormsModule],
+  imports: [CommonModule, ToggleSwitchModule, FormsModule],
   template: `
     <div class="sidebar card">
       <!-- Logo and Toggle -->
